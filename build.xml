@@ -36,7 +36,10 @@
   </Target>
 
   <Target Name="DockerBuild">
-    <Exec Command="docker build -t DockerDemoApp:0.$(build_number) ." WorkingDirectory="$(StageDir)" />
+    <PropertyGroup>
+      <dockerExe>C:\windows\system32\docker.exe</dockerExe>
+    </PropertyGroup>
+    <Exec Command="$(dockerExe) build -t DockerDemoApp:0.$(build_number) ." WorkingDirectory="$(StageDir)" />
   </Target>
 </Project>
   
