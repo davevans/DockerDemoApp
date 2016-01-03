@@ -1,9 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Target Name="Build">
+
+
+    <PropertyGroup>
+      <StageDir>$(teamcity_build_checkoutDir)\Stage</StageDir>
+    </PropertyGroup>
+    
     <Message Text="Hello World" Importance="high" />
     <Message Text="teamcity_build_checkoutDir = $(teamcity_build_checkoutDir)" Importance="high" />
     <MSBuild Projects="$(teamcity_build_checkoutDir)\DockerDemoApp.sln" Properties="Configuration=Release" />
+
+    <RemoveDir Condition="Exists($(StageDir))" Directories="$(StageDir)" />
+    <MakeDir Directories="$(StageDir)" />
+
+    <ItemGroup>
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.cshtml" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.css" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.dll" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.js" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.config" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.html" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.map" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.eot" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.svg" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.ttf" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.woff" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.asax" />
+
+    </ItemGroup>
+
+    <Copy SourceFiles="@(StageFiles)" DestinationFolder="$(StageDir)\%(RecursiveDir)\" />
+    
   </Target>
 </Project>
   
