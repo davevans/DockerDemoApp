@@ -27,10 +27,13 @@
       <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.ttf" />
       <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.woff" />
       <StageFiles Include="$(teamcity_build_checkoutDir)\DockerDemoApp\**\*.asax" />
+      <StageFiles Include="$(teamcity_build_checkoutDir)\DockerFile" />
 
     </ItemGroup>
 
     <Copy SourceFiles="@(StageFiles)" DestinationFolder="$(StageDir)\%(RecursiveDir)\" />
+    
+    
     
   </Target>
 </Project>
