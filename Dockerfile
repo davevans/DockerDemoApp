@@ -1,3 +1,3 @@
-FROM winowsservercore
+FROM winowsservercoreiis
 
 ADD . C:\inetpub\wwwroot\
