@@ -34,9 +34,9 @@
     <Copy SourceFiles="@(StageFiles)" DestinationFolder="$(StageDir)\%(RecursiveDir)\" />
     
   </Target>
-
+  
   <Target Name="DockerBuild">
-    <Exec Command="C:\Windows\System32\docker.exe build -t DockerDemoApp:0.$(build_number) ." />
+    <Exec Command="docker build -t DockerDemoApp:0.$(build_number) ." WorkingDirectory="$(StageDir)" />
   </Target>
 </Project>
   
