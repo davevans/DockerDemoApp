@@ -3,7 +3,7 @@
   <Target Name="Build">
     <Message Text="Hello World" Importance="high" />
     <Message Text="teamcity_build_checkoutDir = $(teamcity_build_checkoutDir)" Importance="high" />
-    <MSBuild Projects="$(teamcity_build_checkoutDir)\DockerDemoApp\DockerDemoApp.sln" Properties="Configuration=Release" />
+    <MSBuild Projects="$(teamcity_build_checkoutDir)\DockerDemoApp.sln" Properties="Configuration=Release" />
   </Target>
 </Project>
   
