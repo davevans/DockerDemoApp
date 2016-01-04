@@ -36,8 +36,11 @@
   </Target>
   
   <Target Name="DockerBuild">
+    <PropertyGroup>
+      <dockerExe>docker</dockerExe>
+    </PropertyGroup>
     <!--<Exec Command="docker build -t DockerDemoApp:0.$(build_number) ." WorkingDirectory="$(StageDir)" />-->
-    <Exec Command="docker images" WorkingDirectory="$(StageDir)" />
+    <Exec Command="&quot;docker&quot; images" WorkingDirectory="$(StageDir)" />
   </Target>
 </Project>
   
