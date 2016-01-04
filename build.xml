@@ -40,7 +40,7 @@
       <!--
       <dockerExe>C:\windows\system32\docker.exe</dockerExe>
       -->
-      <dockerExe>C:\Windows\System32\docker.exe</dockerExe>
+      <dockerExe>C:\Windows\System32\docker</dockerExe>
     </PropertyGroup>
     
     <Message Text="docker exists" Condition="Exists('$(dockerExe)')" Importance="high" />
