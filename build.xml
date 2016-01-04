@@ -43,7 +43,7 @@
       <dockerExe>C:\windows\system32\docker.exe</dockerExe>
     </PropertyGroup>
     <!--<Exec Command="docker build -t DockerDemoApp:0.$(build_number) ." WorkingDirectory="$(StageDir)" />-->
-    <Exec Command="cmd /c docker images" WorkingDirectory="$(StageDir)" />
+    <Exec Command="docker images"  />
   </Target>
 </Project>
   

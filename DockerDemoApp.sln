@@ -8,7 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{E511800A-D564-44FF-B80E-4CE4CEC35C8F}"
 	ProjectSection(SolutionItems) = preProject
 		build.xml = build.xml
-		Dockerfile.txt = Dockerfile.txt
+		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
 Global
