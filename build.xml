@@ -37,7 +37,7 @@
   
   <Target Name="DockerBuild">
     <PropertyGroup>
-      <dockerExe>C:\Windows\SysWOW64\docke.exe</dockerExe>
+      <dockerExe>C:\Windows\SysWOW64\docker.exe</dockerExe>
     </PropertyGroup>
     
     <Message Text="docker exists" Condition="Exists('$(dockerExe)')" Importance="high" />
