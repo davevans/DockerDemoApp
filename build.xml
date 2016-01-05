@@ -40,9 +40,7 @@
       <dockerExe>C:\Windows\SysWOW64\docker.exe</dockerExe>
     </PropertyGroup>
     
-    <Message Text="docker exists" Condition="Exists('$(dockerExe)')" Importance="high" />
-    <Message Text="docker doesnt exists: $(dockerExe)" Condition="!Exists('$(dockerExe)')" Importance="high" />
-    
+    <Exec Command="$(dockerExe) images" />
     <Exec Command="$(dockerExe) build -t dockerdemoapp:0.$(build_number) $(StageDir)" />
   </Target>
 </Project>
