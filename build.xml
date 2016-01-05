@@ -41,7 +41,7 @@
     </PropertyGroup>
     
     <Exec Command="$(dockerExe) images" />
-    <Exec Command="$(dockerExe) build -t dockerdemoapp:0.$(build_number) $(StageDir)" />
+    <Exec Command="$(dockerExe) build -t dockerdemoapp:0.$(build_number) --pull=false $(StageDir)" />
   </Target>
 </Project>
   
