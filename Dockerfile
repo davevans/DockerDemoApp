@@ -1,3 +1,3 @@
-FROM winowsservercoreiis:latest
+FROM winowsservercoreiis
 
-ADD . C:\inetpub\wwwroot\
+ADD . \inetpub\wwwroot\
