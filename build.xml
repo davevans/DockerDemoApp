@@ -37,7 +37,7 @@
   
   <Target Name="DockerBuild">
     <PropertyGroup>
-      <dockerExe>C:\Windows\System32\docker.exe</dockerExe>
+      <dockerExe>C:\Windows\SysWOW64\docker.exe</dockerExe>
     </PropertyGroup>
     
     <Exec Command="$(dockerExe) images" />
